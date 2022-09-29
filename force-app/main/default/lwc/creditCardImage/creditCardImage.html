@@ -1,3 +1,14 @@
 <template>
-    <p>this is the cc image</p>
+    <template if:true={ccNumber}>
+        <p>{ccNumber}</p>
+        <p>{ccHolderName}</p>
+        <p>{ccExpDate}</p>
+        <p>{ccCcv}</p>
+        <template if:true={ccType}>
+            {ccType}
+        </template>
+    </template>
+    <template if:false={ccType}>
+        Please type in your credit card number.
+    </template>
 </template>

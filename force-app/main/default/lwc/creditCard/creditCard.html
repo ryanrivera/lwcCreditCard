@@ -1,4 +1,5 @@
 <template>
-    <c-credit-card-image></c-credit-card-image>
-    <c-credit-card-form onvalidatecc={handleCCValidate}></c-credit-card-form>
+    <p>Credit card form:</p>
+    <c-credit-card-image cc-number={ccNumber} cc-type={ccType} cc-holder-name={ccHolderName} cc-exp-date={ccExpDate} cc-ccv={ccCCV}></c-credit-card-image>
+    <c-credit-card-form onprocesscardnumber={handleCardNumber} onprocesscardholdername={handleCardHolderName} onprocesscardexpdate={handleCardExpDate} onprocesscardccv={handleCardCCV}></c-credit-card-form>
 </template>

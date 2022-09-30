@@ -1,41 +1,55 @@
 import { LightningElement, api } from 'lwc';
-import { getMonths } from 'c/creditCardHelpers';
+import { getMonths, getYears } from 'c/creditCardHelpers';
 
 export default class CreditCardForm extends LightningElement {
-    @api
+    // @api
+    monthOptions = getMonths();
+    yearOptions = getYears();
 
-    months = getMonths();
+    @api ccExpMonth;
+    @api ccExpYear;
 
     cardNumberInputHandler(event){
         const evt = new CustomEvent('processcardnumber', {
-            detail: event.target.value
+            detail: event.detail.value
         });
         this.dispatchEvent(evt);
     }
 
     cardHolderNameInputHandler(event){
         const evt = new CustomEvent('processcardholdername', {
-            detail: event.target.value
+            detail: event.detail.value
         });
         this.dispatchEvent(evt);
     }
     
-    cardExpDateInputHandler(event){
-        const evt = new CustomEvent('processcardexpdate', {
-            detail: event.target.value
-        });
-        this.dispatchEvent(evt);   
-    }
-    
     cardCCVInputHandler(event){
         const evt = new CustomEvent('processcardccv', {
-            detail: event.target.value
+            detail: event.detail.value
         });
         this.dispatchEvent(evt);
         
     }
 
     cardExpMonthHandler(event){
-        console.log(event.target.value);
+        console.log(event.detail.value);
+        const evt = new CustomEvent('processcardexpmonth', {
+            detail: event.detail.value
+        });
+        this.dispatchEvent(evt);
+    }
+
+    cardExpYearHandler(event){
+        console.log(event.detail.value);
+        const evt = new CustomEvent('processcardexpyear', {
+            detail: event.detail.value
+        });
+        this.dispatchEvent(evt);
+    }
+
+    formSubmitHandler(event){
+        console.log('creditCardForm:', event);
+        const evt = new CustomEvent('formsubmission');
+        this.dispatchEvent(evt);
     }
 }

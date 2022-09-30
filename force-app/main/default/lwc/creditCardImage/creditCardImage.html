@@ -2,7 +2,7 @@
     <template if:true={ccNumber}>
         <p>{ccNumber}</p>
         <p>{ccHolderName}</p>
-        <p>{ccExpDate}</p>
+        <p>{ccExpMonth} / {ccExpYear}</p>
         <p>{ccCcv}</p>
         <template if:true={ccType}>
             {ccType}

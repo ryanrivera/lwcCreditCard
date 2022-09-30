@@ -1,13 +1,24 @@
 <template>
-    <lightning-input label="Credit Card Number" max-length="16" onchange={cardNumberInputHandler}></lightning-input>
-    <lightning-input label="Card Holder" onchange={cardHolderNameInputHandler}></lightning-input>
-    <!-- expiration max is 20 years-->
-    <lightning-input label="Expiration Date" placeholder="MM/YY" onchange={cardExpDateInputHandler}></lightning-input>
-    <lightning-input label="CCV" max-length="4" onchange={cardCCVInputHandler}></lightning-input>
-    <select class="slds-select" name="expMonth" onchange={cardExpMonthHandler}>
-        <option value="Jan">Jan</option>
-        <option value="Feb">Feb</option>
-        <option value="Mar">Mar</option>
-        <option value="Apr">Apr</option>
-    </select>
+    <lightning-input label="Credit Card Number" max-length="16" onchange={cardNumberInputHandler} required></lightning-input>
+    <lightning-input label="Card Holder" onchange={cardHolderNameInputHandler} required></lightning-input>
+    <lightning-input label="CCV" max-length="4" onchange={cardCCVInputHandler} required></lightning-input>
+    <lightning-combobox
+        name="exp-month"
+        label="Expiration Month"
+        value={ccExpMonth}
+        placeholder="Expiration Month"
+        options={monthOptions}
+        onchange={cardExpMonthHandler}
+        required>
+    </lightning-combobox>
+    <lightning-combobox
+        name="exp-year"
+        label="Expiration Year"
+        value={ccExpYear}
+        placeholder="Expiration Year"
+        options={yearOptions}
+        onchange={cardExpYearHandler}
+        required>
+    </lightning-combobox>
+    <lightning-button variant="brand" label="Add Credit Card" title="Add Credit Card" onclick={formSubmitHandler} class="slds-m-left x-small"></lightning-button>
 </template>

@@ -19,9 +19,21 @@ const getCreditCardType = (cc) => {
 };
 
 const getMonths = () => {
-    return [
-        'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'
-    ];
+  const months = [...Array(12).keys()].map(key => new Date(0, key).toLocaleString('en', { month: 'short' }));
+  const monthOptions = months.map((el, index) => {
+    return {'label': el, 'value': `${index}`};
+  });
+
+  return monthOptions;
 }
 
-export { getCreditCardType, getMonths };
+const getYears = () => {
+  const years = [...Array(21).keys()].map(key => {
+    const year = new Date().getFullYear() + key;
+    return {'label': year, 'value': `${year}`};
+  });
+
+  return years;
+}
+
+export { getCreditCardType, getMonths, getYears };

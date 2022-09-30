@@ -1,0 +1,59 @@
+.card {
+    position: relative;
+    aspect-ratio: 1.60 / 1;
+    background-color: #ccc;
+    color: #666;
+}
+
+.number, .name, .expdate, .ccv, .type {
+    position: absolute;
+}
+.number {
+    left: 10%;
+    top: 50%;
+}
+.name {
+    left: 10%;
+    bottom: 10%;
+}
+.expdate {
+    left: 50%;
+    bottom: 30%;
+}
+.ccv {
+    display: none;
+}
+.type {
+    top: 10%;
+    right: 10%;
+}
+.logo {
+}
+.logo svg {
+}
+.visa {
+    background-color: blue;
+}
+.visa * {
+    color: white;
+}
+.visa .visa-logo {
+    display: block;
+}
+.mastercard {
+    background-color: gold;
+}
+.mastercard .mastercard-logo {
+    display: block;
+}
+.amex {
+    background-color: green;
+}
+.amex * {
+    color: white;
+}
+.amex .amex-logo {
+    display: block;
+}
+
+.e{fill:#f79e1b}

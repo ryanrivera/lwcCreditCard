@@ -7,4 +7,7 @@ export default class CreditCardImage extends LightningElement {
     @api ccExpMonth;
     @api ccExpYear;
     @api ccCcv;
+    @api ccCardClass;
+    @api ccExpMonthDisplay;
+    @api ccExpYearDisplay;
 }

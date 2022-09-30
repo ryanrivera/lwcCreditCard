@@ -12,14 +12,24 @@
             </header>
         </div>
         <div class="slds-card__body slds-card__body_inner">
-            <c-credit-card-image
-                cc-number={ccNumber}
-                cc-type={ccType}
-                cc-holder-name={ccHolderName}
-                cc-exp-month={ccExpMonth}
-                cc-exp-year={ccExpYear}
-                cc-ccv={ccCCV}>
-            </c-credit-card-image>
+            <div class="slds-m-bottom_large">
+                <c-credit-card-image
+                    cc-number={ccNumber}
+                    cc-type={ccType}
+                    cc-holder-name={ccHolderName}
+                    cc-exp-month={ccExpMonth}
+                    cc-exp-year={ccExpYear}
+                    cc-ccv={ccCCV}
+                    cc-card-class={ccCardClass}
+                    cc-exp-month-display={ccExpMonthDisplay}
+                    cc-exp-year-display={ccExpYearDisplay}>
+                </c-credit-card-image>
+            </div>
+            <template if:true={expError}>
+                <div class="slds-notify slds-notify_alert slds-alert_warning slds-m-bottom_medium" role="alert">
+                    <p>Please use a credit card with expiration date greater than 30 days.</p>
+                </div>
+            </template>
             <c-credit-card-form
                 onprocesscardnumber={handleCardNumber}
                 onprocesscardholdername={handleCardHolderName}
@@ -31,5 +41,14 @@
                 cc-exp-year={ccExpYear}>
             </c-credit-card-form>
         </div>
+        <template if:true={processing}>
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </template>
     </article>
 </template>

@@ -21,8 +21,9 @@ const getCreditCardType = (cc) => {
 const getMonths = () => {
   const months = [...Array(12).keys()].map(key => new Date(0, key).toLocaleString('en', { month: 'short' }));
   const monthOptions = months.map((el, index) => {
-    return {'label': el, 'value': `${index}`};
+    return {'label': el, 'value': `${Number(index).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}`};
   });
+  
 
   return monthOptions;
 }

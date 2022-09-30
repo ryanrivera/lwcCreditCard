@@ -1,7 +1,10 @@
 import { LightningElement, api } from 'lwc';
+import { getMonths } from 'c/creditCardHelpers';
 
 export default class CreditCardForm extends LightningElement {
     @api
+
+    months = getMonths();
 
     cardNumberInputHandler(event){
         const evt = new CustomEvent('processcardnumber', {
@@ -30,5 +33,9 @@ export default class CreditCardForm extends LightningElement {
         });
         this.dispatchEvent(evt);
         
+    }
+
+    cardExpMonthHandler(event){
+        console.log(event.target.value);
     }
 }

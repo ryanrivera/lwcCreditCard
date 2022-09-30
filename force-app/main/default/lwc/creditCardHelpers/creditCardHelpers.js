@@ -1,4 +1,4 @@
-export function creditCardType(cc) {
+const getCreditCardType = (cc) => {
     let amex = new RegExp('^3[47][0-9]{13}$');
     let visa = new RegExp('^4[0-9]{12}(?:[0-9]{3})?$');
   
@@ -16,4 +16,12 @@ export function creditCardType(cc) {
     }
     
     return undefined;
-  }
+};
+
+const getMonths = () => {
+    return [
+        'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'
+    ];
+}
+
+export { getCreditCardType, getMonths };

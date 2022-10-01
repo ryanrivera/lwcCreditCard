@@ -1,59 +1,100 @@
 .card {
-    position: relative;
-    aspect-ratio: 1.60 / 1;
-    background-color: #ccc;
-    color: #666;
+  position: relative;
+  border-radius: 0.75rem;
+  aspect-ratio: 1.6 / 1;
+  background-color: #ccc;
+  color: #666;
+  transition: all ease-in 0.2s;
 }
-
-.number, .name, .expdate, .ccv, .type {
-    position: absolute;
+.number,
+.name,
+.expdate,
+.ccv,
+.type {
+  position: absolute;
 }
 .number {
-    left: 10%;
-    top: 50%;
+  left: 10%;
+  top: 40%;
 }
 .name {
-    left: 10%;
-    bottom: 10%;
+  left: 10%;
+  bottom: 10%;
+  text-transform: uppercase;
+}
+.valid {
+  display: inline-block;
+  width: 30%;
+  margin-right: 0.1rem;
+  text-transform: uppercase;
+  font-size: 0.5rem;
 }
 .expdate {
-    left: 50%;
-    bottom: 30%;
+  left: 50%;
+  bottom: 30%;
 }
 .ccv {
-    display: none;
+  display: none;
 }
 .type {
-    top: 10%;
-    right: 10%;
+  top: 10%;
+  right: 10%;
 }
 .logo {
-}
-.logo svg {
-}
-.visa {
-    background-color: blue;
-}
-.visa * {
-    color: white;
-}
-.visa .visa-logo {
-    display: block;
-}
-.mastercard {
-    background-color: gold;
-}
-.mastercard .mastercard-logo {
-    display: block;
-}
-.amex {
-    background-color: green;
-}
-.amex * {
-    color: white;
-}
-.amex .amex-logo {
-    display: block;
+  position: absolute;
+  right: 3%;
+  bottom: 4%;
+  display: none;
+  width: 25%;
 }
 
-.e{fill:#f79e1b}
+.visa {
+  background-color: #1a1f71;
+}
+.visa * {
+  color: white;
+}
+.visa .visa-logo {
+  display: block;
+}
+.visa-logo .cls-1 {
+  fill: #fff;
+}
+
+.mastercard {
+  background-color: #f2f2f2;
+}
+.mastercard .mastercard-logo {
+  display: block;
+}
+.mastercard-logo .cls-1 {
+  fill: #f79e1b;
+}
+.mastercard-logo .cls-2 {
+  fill: #ff5f00;
+}
+.mastercard-logo .cls-3 {
+  fill: #eb001b;
+}
+
+.mastercard-logo .cls-4 {
+  fill: #f79410;
+}
+
+.amex {
+  background-color: #cae9d9;
+}
+.amex * {
+  color: #333;
+}
+.amex .amex-logo {
+  display: block;
+  width: 20%;
+}
+.amex-logo .cls-1 {
+  fill: #fff;
+}
+
+.amex-logo .cls-2 {
+  fill: #016fd0;
+}
